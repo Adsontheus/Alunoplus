@@ -1,0 +1,227 @@
+/* Reset e fonte */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f9fafb;
+  color: #2c3e50;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Layout principal */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: linear-gradient(180deg, #4f46e5 0%, #6366f1 100%);
+  color: #fff;
+  padding: 40px 20px;
+  position: sticky;
+  top: 0;
+}
+
+.sidebar h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin: 20px 0;
+  font-size: 16px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.sidebar li:hover {
+  opacity: 0.8;
+  transform: translateX(5px);
+}
+
+/* Conteúdo principal */
+.main {
+  flex: 1;
+  padding: 40px;
+}
+
+/* Cabeçalho */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.aluno-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 18px;
+}
+
+.aluno-info img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+/* Cartões principais */
+.cards {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.card {
+  flex: 1;
+  background: #ffffff;
+  padding: 28px 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #4f46e5;
+}
+
+.card p {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Módulos em grade */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.modulo {
+  background: #ffffff;
+  padding: 28px 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  min-height: 200px;
+  transition: transform 0.3s;
+}
+
+.modulo:hover {
+  transform: scale(1.02);
+}
+
+.modulo h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #374151;
+}
+
+.modulo ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.modulo li {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+/* Tabelas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+/* Inputs e selects */
+input[type="text"],
+input[type="date"],
+select {
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Botões */
+button {
+  padding: 10px 16px;
+  background-color: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+button:hover {
+  background-color: #4338ca;
+}
+
+/* Abas */
+.aba {
+  display: none;
+}
+
+.aba.ativa {
+  display: block;
+}
+
+/*Facilitar a troca de cores*/
+:root { --cor-principal: #4f46e5;}
+
+/* QUERIES*/
+
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: relative;
+  }
+
+  .main {
+    padding: 20px;
+  }
+}
