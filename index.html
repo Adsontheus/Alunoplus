@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Painel do Aluno</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>🎓 EduPainel</h2>
+      <ul>
+        <li onclick="mudarAba('inicio')">🏠 Início</li>
+        <li onclick="mudarAba('sessoes')">📚 Sessões</li>
+        <li onclick="mudarAba('desafios')">🧩 Desafios</li>
+        <li onclick="mudarAba('tarefas')">📝 Tarefas</li>
+        <li onclick="mudarAba('progresso')">📈 Progresso</li>
+        <li onclick="mudarAba('notas')">🎯 Notas</li>
+        <li onclick="mudarAba('anuncios')">📢 Anúncios</li>
+        <li onclick="mudarAba('projetos')">🌟 Projetos</li>
+        <li onclick="mudarAba('configuracoes')">⚙️ Configurações</li>
+      </ul>
+    </aside>
+
+    <main class="main">
+      <header class="header">
+        <div class="aluno-info">
+          <img src="https://i.pravatar.cc/40" alt="avatar" />
+          <span>Olá, Arthur</span>
+        </div>
+        <button onclick="logout()">Sair</button>
+      </header>
+
+      <!-- Início -->
+      <section id="aba-inicio" class="aba ativa">
+        <div class="cards">
+          <div class="card xp">
+            <h3>XP Atual</h3>
+            <p>🔸 820 XP</p>
+          </div>
+          <div class="card dias">
+            <h3>Sequência</h3>
+            <p>🔥 12 dias seguidos</p>
+          </div>
+          <div class="card nivel">
+            <h3>Nível</h3>
+            <p>🎯 Nível 5</p>
+          </div>
+        </div>
+
+        <section class="grid">
+          <div class="modulo">
+            <h3>Sessões</h3>
+            <ul>
+              <li>✅ Matemática (assistido)</li>
+              <li>✅ História (assistido)</li>
+              <li>📌 Biologia - próxima aula: 17/05</li>
+              <li>📌 Geografia - próxima aula: 18/05</li>
+            </ul>
+          </div>
+
+          <div class="modulo">
+            <h3>Tarefas Diárias</h3>
+            <ul>
+              <li>📘 Ler capítulo 4 de História</li>
+              <li>🧮 Resolver 10 exercícios de Matemática</li>
+              <li>🧪 Estudar tabela periódica</li>
+            </ul>
+          </div>
+
+          <div class="modulo">
+            <h3>Ranking da Turma</h3>
+            <ol>
+              <li>🥇 Ana - 920 XP</li>
+              <li>🥈 João - 870 XP</li>
+              <li>🥉 Arthur - 820 XP</li>
+            </ol>
+          </div>
+
+          <div class="modulo">
+            <h3>Notas Recentes</h3>
+            <ul>
+              <li>📊 Matemática: 9.0</li>
+              <li>📊 Português: 8.5</li>
+              <li>📊 Ciências: 7.8</li>
+            </ul>
+          </div>
+
+          <div class="modulo">
+            <h3>Anúncios Semanais</h3>
+            <ul>
+              <li>🗓️ Prova de História na sexta-feira</li>
+              <li>🎉 Feira de Ciências dia 25/05</li>
+              <li>🧠 Palestra sobre Saúde Mental disponível</li>
+            </ul>
+          </div>
+
+          <div class="modulo">
+            <h3>Projetos Extracurriculares</h3>
+            <ul>
+              <li>🖌️ Clube de Artes - quarta</li>
+              <li>💻 Oficina de Programação - sexta 15h</li>
+              <li>🌿 Projeto Verde: plantio na escola</li>
+            </ul>
+          </div>
+        </section>
+      </section>
+
+      <!-- Outras Abas -->
+      <section id="aba-sessoes" class="aba">
+        <div class="modulo">
+          <h3>Histórico de Sessões</h3>
+          <ul>
+            <li>📺 12/05 - Matemática: Álgebra (assistido)</li>
+            <li>📺 13/05 - História: Idade Média (assistido)</li>
+            <li>🟡 14/05 - Biologia: Células (agendado)</li>
+          </ul>
+        </div>
+        <div class="modulo">
+          <h3>Agendar Nova Sessão</h3>
+          <p>Escolha a matéria e horário preferido:</p>
+          <select>
+            <option>Matemática</option>
+            <option>História</option>
+            <option>Biologia</option>
+            <option>Geografia</option>
+          </select>
+          <br><br>
+          <input type="date" />
+          <button>Agendar</button>
+        </div>
+      </section>
+
+      <section id="aba-desafios" class="aba">
+        <div class="modulo">
+          <h3>Desafios Ativos</h3>
+          <ul>
+            <li>🧩 Resolver 5 problemas lógicos em 10 minutos</li>
+            <li>🧩 Quiz relâmpago de História (20 perguntas)</li>
+          </ul>
+        </div>
+        <div class="modulo">
+          <h3>Recompensas</h3>
+          <p>Conclua desafios para ganhar XP extra e medalhas digitais!</p>
+        </div>
+      </section>
+
+      <section id="aba-tarefas" class="aba">
+        <div class="modulo">
+          <h3>Tarefas Pendentes</h3>
+          <ul>
+            <li>📘 Capítulo 5 de Geografia</li>
+            <li>🧪 Relatório sobre reações químicas</li>
+            <li>📄 Redação: “A importância da leitura”</li>
+          </ul>
+        </div>
+        <div class="modulo">
+          <h3>Tarefas Concluídas</h3>
+          <ul>
+            <li>✅ Exercícios de Álgebra</li>
+            <li>✅ Resumo de Revolução Francesa</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="aba-progresso" class="aba">
+        <div class="modulo">
+          <h3>Gráfico de Evolução</h3>
+          <p>[Gráfico futuramente com progresso por matéria]</p>
+        </div>
+        <div class="modulo">
+          <h3>Horas de Estudo na Semana</h3>
+          <ul>
+            <li>🗓️ Segunda: 2h</li>
+            <li>🗓️ Terça: 1.5h</li>
+            <li>🗓️ Quarta: 3h</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="aba-notas" class="aba">
+        <div class="modulo">
+          <h3>Notas por Matéria</h3>
+          <table>
+            <tr><th>Matéria</th><th>Nota</th></tr>
+            <tr><td>Matemática</td><td>9.0</td></tr>
+            <tr><td>Português</td><td>8.5</td></tr>
+            <tr><td>Ciências</td><td>7.8</td></tr>
+          </table>
+        </div>
+      </section>
+
+      <section id="aba-anuncios" class="aba">
+        <div class="modulo">
+          <h3>Anúncios Importantes</h3>
+          <ul>
+            <li>📢 Plantão de dúvidas: quinta às 19h</li>
+            <li>🎓 Encerramento do semestre: 30/06</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="aba-projetos" class="aba">
+        <div class="modulo">
+          <h3>Projetos em Andamento</h3>
+          <ul>
+            <li>💡 Criação de um jornal escolar</li>
+            <li>🌳 Ações de sustentabilidade na escola</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="aba-configuracoes" class="aba">
+        <div class="modulo">
+          <h3>Preferências</h3>
+          <label>Nome de exibição: <input type="text" value="Arthur"/></label>
+          <br><br>
+          <label>Notificações: <input type="checkbox" checked /></label>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
